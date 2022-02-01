@@ -1,0 +1,69 @@
+package com.helpy.brihaspati4.comnmgr;
+import org.apache.log4j.Logger;
+import org.w3c.dom.*;
+import org.xml.sax.SAXException;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.*;
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.net.SocketException;
+import java.security.KeyStore;
+import java.security.PublicKey;
+import java.util.ArrayList;
+import java.util.Enumeration;
+import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+public class CommunicationManager{
+
+private static CommunicationManager comnmgr;
+private static CommunicationManagerBuffer communicationManagerBuffer;
+
+selfIPAddress = getSystemIP();
+selfPortAddress = getPortAddress();
+selfTransportAddress = getTransportAddress();             // Inially communication manager gets the self node details //
+
+public void getFileFromExternalInputBuffer();            //Fetching the file from External i/p buffer//
+ Thread fetchThread = new Thread(()  {
+            int sleepTime=5000;
+            while (true) {
+               int count=0;
+                File file = communicationManagerBuffer.fetchFromExternalInputBuffer();
+                if (!(file == null)) {
+                    count++;
+                    log.debug("New file fetched from InputBuffer");
+					fetchThread.start();
+						                                 
+dIP=getDestIP(file);						 // Reading the received packet/msg//
+dTpt=getDestTransport();		     	                 //Retreiving the Destination IP,Transport type//
+
+public boolean addFileToInternalInputBuffer(findNextHop(dIP));{	 //Adding the file to internal input buffer and query generated to find out the nexthop//         
+	boolean isAdded = false;
+        isAdded = comnmgr.addFileToInternalInputBuffer(file);
+        return isAdded;
+		}
+destIP=comnmgr.getFilefromInternalOutputBuffer();             //Fetching the packet from Internal o/p buffer//
+if(dIP.equals(destIP)					      // Comparing the IPs for finding out the destination node//
+{							      //if both IPs are same the recieved data is forwarded to Internal i/p buffer//
+public boolean addFileToInternalInputBuffer(File file) {
+        boolean isAdded = false;
+        isAdded = comnmgr.addToInternalOutputBuffer(file);
+        return isAdded;
+}
+}
+else							      // Else the packet is forwarded to the External Output BUffer for NAT traversal//
+{
+public boolean addFileToExternalOutputBuffer(File file) {
+        boolean isAdded = false;
+        isAdded = comnmgr.addToExternalOutputBuffer(file);
+        return isAdded;					    
+}
