@@ -1,0 +1,32 @@
+OPTICAL BURST SWITCHING (OBS)
+
+
+Optical Burst Switching (OBS) is an optical network technology that aims to improve the use of optical networks resources when compared to optical circuit switching (OCS). OBS is implemented using Wavelength Division Multiplexing (WDM), a data transmission technology that transmits data in an optical fibre by establishing several channels, each channel corresponding to a specific light wavelength.
+
+Optical Burst Switching has several distinctive features: first, the packets are aggregated in the ingress (entry) node, for a very short period of time. This allows that packets that have the same
+constraints, e.g., the same destination address and maybe, the same quality of service requirements are sent together as a burst of data (therefore the term Burst in the concept name). When the burst arrives at the egress (exit) node, it is disassembled and its constituent packets routed to their destination.
+
+While the burst is being assembled in the ingress node, or possibly, after the burst has been assembled, a control packet (or header packet), containing the routing information for that burst is sent to the network, ahead of the burst. The time that separates the transmission of the control packet and the transmission of the burst is termed the offset time, and it must be long enough to allow all the routers in the predicted path the burst will take, to be configured, and only for the time needed for the burst to cross the network. When the network nodes are configured, the burst departs the ingress node and travels through the network in an all-optical form, using the circuit that was previously established by the control packet.
+
+The second characteristic of OBS is that the routing information is transmitted in the Control Packet and is not part of the data burst itself. In fact, the burst crosses the intermediate nodes in the
+network using the pre-established and pre-configured circuit in an agnostic manner, i.e., the node does not need to interpreted the data in the burst, and so, it does not need to know the format of the data in the burst. This is another special feature of OBS.
+
+Another distinctive characteristic of OBS is that the Control Packet will undergo optical to electronic to optical conversion at each intermediate node, and also optical to electronic conversion at the egress node, as to allow these nodes to be able to configure its optical switching devices. A final characteristic of OBS networks is that there is what is called a data and control plane separation, i.e., the channel that is used to transmit the control packets is specific and different from the channels that are used to transmit the data bursts.
+
+
+
+DEFLECTION ROUTING
+
+
+Deflection routing is the rerouting of Internet Protocol (IP) network packets to eliminate heavy data traffic at the router interface and avoid packet buffering when network packets are transmitted with same route contention. Deflection routing is used in modern networking to reduce system and infrastructure expenses.
+
+During deflection routing, nodes receive autonomous network data packets, which are forwarded without buffering to the nearest destination point via the shortest available path. This process reduces traffic and network complexity.
+
+Deflection routing functions optimally when implemented with optical networks.
+
+Deflection routing disadvantages include:
+
+* Network bandwidth is used inefficiently.
+* Packets are received out of order.
+* Quality of service (QoS) implementation is problematic.
+
